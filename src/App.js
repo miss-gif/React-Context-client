@@ -4,7 +4,7 @@ import OrderPage from "./pages/OrderPage/index";
 
 function App() {
   return (
-    <div>
+    <div style={{ padding: "4rem" }}>
       <OrderPage />
       <SummaryPage />
     </div>
