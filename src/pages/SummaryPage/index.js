@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { OrderContext } from "./../../context/OrderContext";
 
 const SummaryPage = () => {
   const [checked, setChecked] = useState(false);
+  const [orderDetails] = useContext(OrderContext);
+
+  const productArray = Array.from(orderDetails.products);
+  const productList = productArray.map(([key, value]) => {
+    <li key={key}>
+      {value} {key}
+    </li>;
+  });
 
   return (
     <div>
+      <h1>주문 확인</h1>
+      <h2>여행 상품: {orderDetails.totals.products}</h2>
+      <ul>{productList}</ul>
       <form>
         <input
           type="checkbox"
