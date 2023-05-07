@@ -6,11 +6,11 @@ const SummaryPage = () => {
   const [orderDetails] = useContext(OrderContext);
 
   const productArray = Array.from(orderDetails.products);
-  const productList = productArray.map(([key, value]) => {
+  const productList = productArray.map(([key, value]) => (
     <li key={key}>
       {value} {key}
-    </li>;
-  });
+    </li>
+  ));
 
   return (
     <div>
