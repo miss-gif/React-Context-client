@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { OrderContext } from "../../context/OrderContext";
 import axios from "axios";
 
-const CompletePage = ({ setStop }) => {
-  const [orderHistory, setorderHistory] = useState([]);
+const CompletePage = ({ setStep }) => {
+  const [orderHistory, setOrderHistory] = useState([]);
   const [orderData] = useContext(OrderContext);
   const [loading, setLoading] = useState(true);
 
@@ -18,7 +18,7 @@ const CompletePage = ({ setStop }) => {
         orderData
       );
       console.log("response", response);
-      setorderHistory(response.data);
+      setOrderHistory(response.data);
       setLoading(false);
     } catch (error) {
       console.log(error);
